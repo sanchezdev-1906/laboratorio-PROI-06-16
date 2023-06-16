@@ -50,7 +50,29 @@ class Program
   }
   static void Ejercicio7()
   {
+    int n;
+    Console.WriteLine("Ingrese la dimension de la matriz.");
+    string entrada = Console.ReadLine();
+    if (!(int.TryParse(entrada, out n)) && int.Parse(entrada) < 1)
+    {
+      Console.WriteLine("El tamaño no es valido");
+      return;
+    }
 
+    float[,] matriz = new float[n, n];
+    for (int i = 0; i < n; i++)
+    {
+      for (int j = 0; j < n; j++)
+      {
+        matriz[i, j] = new Random().NextInt64(-100, 100);
+      }
+    }
+    Console.WriteLine("Matriz desordenada");
+    ImprimirMatriz(matriz);
+
+    Array.Sort(matriz);
+    Console.WriteLine("Matriz ordenada");
+    ImprimirMatriz(matriz);
   }
   static void Ejercicio9()
   {
