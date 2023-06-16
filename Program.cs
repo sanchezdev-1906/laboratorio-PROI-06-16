@@ -46,7 +46,16 @@ class Program
   }
   static void Ejercicio5()
   {
-
+    Console.Write("Tamaño de la matriz: ");
+        int N = int.Parse(Console.ReadLine());
+        int [,] MatTri = new int [N,N];
+        int x = 0;
+        for (int f = 0; f < N; f++){
+            for (int c = 0; c <= x; c++){
+                MatTri[f,c]= c>f?0:1;
+            }
+        }
+        ImprimirMatriz(MatTri);
   }
   static void Ejercicio7()
   {
