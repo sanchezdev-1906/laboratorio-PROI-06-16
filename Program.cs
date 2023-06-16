@@ -116,17 +116,26 @@ class Program
     }
 
     float[,] matriz = new float[n, n];
+    float[] matrizOrdenada = new float[n * n];
     for (int i = 0; i < n; i++)
     {
       for (int j = 0; j < n; j++)
       {
         matriz[i, j] = new Random().NextInt64(-100, 100);
+        matrizOrdenada[i * n + j] = matriz[i, j];
       }
     }
     Console.WriteLine("Matriz desordenada");
     ImprimirMatriz(matriz);
 
-    Array.Sort(matriz);
+    Array.Sort(matrizOrdenada);
+    for (int i = 0; i < n; i++)
+    {
+      for (int j = 0; j < n; j++)
+      {
+        matriz[i, j] = matrizOrdenada[i * n + j];
+      }
+    }
     Console.WriteLine("Matriz ordenada");
     ImprimirMatriz(matriz);
   }
