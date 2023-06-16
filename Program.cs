@@ -16,7 +16,7 @@ class Program
       Console.WriteLine("9. Problema 9");
       Console.WriteLine("0. Salir");
       Console.WriteLine("Digite una opcion");
-      string input = Console.ReadLine();
+      string input = Console.ReadLine() ?? "";
       if (!int.TryParse(input, out op))
       {
         Console.WriteLine("No es valido");
@@ -72,7 +72,7 @@ class Program
   {
     int n;
     Console.WriteLine("Ingrese la dimension de la matriz.");
-    string entrada = Console.ReadLine();
+    string entrada = Console.ReadLine() ?? "";
     if (!(int.TryParse(entrada, out n)) && int.Parse(entrada) < 1)
     {
       Console.WriteLine("El tamaño no es valido");
@@ -93,7 +93,7 @@ class Program
   static void Ejercicio5()
   {
     Console.Write("Tamaño de la matriz: ");
-    int N = int.Parse(Console.ReadLine());
+    int N = int.Parse(Console.ReadLine() ?? "1");
     int[,] MatTri = new int[N, N];
     for (int f = 0; f < N; f++)
     {
@@ -108,7 +108,7 @@ class Program
   {
     int n;
     Console.WriteLine("Ingrese la dimension de la matriz.");
-    string entrada = Console.ReadLine();
+    string entrada = Console.ReadLine() ?? "";
     if (!(int.TryParse(entrada, out n)) && int.Parse(entrada) < 1)
     {
       Console.WriteLine("El tamaño no es valido");
@@ -134,7 +134,7 @@ class Program
   {
     int dimension = 5, n = 1;
     Console.WriteLine("Ingrese la dimension de la matriz.");
-    string entrada = Console.ReadLine();
+    string entrada = Console.ReadLine() ?? "";
     if (!(int.TryParse(entrada, out dimension)) && int.Parse(entrada) < 1)
     {
       Console.WriteLine("El tamaño no es valido");
