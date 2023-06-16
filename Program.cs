@@ -4,6 +4,52 @@ class Program
 {
   static void Main(string[] args)
   {
+    int op;
+    do
+    {
+      Console.Clear();
+      Console.WriteLine("MENU DE OPCIONES");
+      Console.WriteLine("1. Problema 1");
+      Console.WriteLine("3. Problema 3");
+      Console.WriteLine("5. Problema 5");
+      Console.WriteLine("7. Problema 7");
+      Console.WriteLine("9. Problema 9");
+      Console.WriteLine("0. Salir");
+      Console.WriteLine("Digite una opcion");
+      string input = Console.ReadLine();
+      if (!int.TryParse(input, out op))
+      {
+        Console.WriteLine("No es valido");
+        op = -1;
+      }
+
+      switch (op)
+      {
+        case 1:
+          Ejercicio1();
+          break;
+        case 3:
+          Ejercicio3();
+          break;
+        case 5:
+          Ejercicio5();
+          break;
+        case 7:
+          Ejercicio7();
+          break;
+        case 9:
+          Ejercicio9();
+          break;
+        case 0:
+          Console.WriteLine("El program terminó");
+          break;
+        default:
+          Console.WriteLine("Digite una opcion");
+          break;
+      }
+      Console.Write("Digite una tecla... ");
+      Console.ReadKey();
+    } while (op != 0);
 
   }
   static void Ejercicio1()
