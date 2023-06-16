@@ -132,7 +132,51 @@ class Program
   }
   static void Ejercicio9()
   {
+    int dimension = 5, n = 1;
+    Console.WriteLine("Ingrese la dimension de la matriz.");
+    string entrada = Console.ReadLine();
+    if (!(int.TryParse(entrada, out dimension)) && int.Parse(entrada) < 1)
+    {
+      Console.WriteLine("El tamaño no es valido");
+      return;
+    }
+    int[,] matriz = new int[dimension, dimension];
+    int i = 0;
+    int j = dimension / 2;
+    int k = 0, l = 0;
+    int[] Filas = new int[dimension];
+    int[] Columnas = new int[dimension];
 
+    matriz[i, j] = n++;
+
+    for (k = i, l = j; n <= dimension * dimension; n++)
+    {
+      i--;
+      j++;
+
+      if (i < 0)
+        i = dimension - 1;
+      if (j >= dimension)
+        j = 0;
+
+      if (matriz[i, j] == 0)
+      {
+        matriz[i, j] = n;
+      }
+      else
+      {
+        k++;
+        if (k >= dimension)
+          k = 0;
+        matriz[k, l] = n;
+        i = k;
+        j = l;
+        continue;
+      }
+      k = i;
+      l = j;
+    }
+    ImprimirMatriz(matriz);
   }
 
   static void ImprimirMatriz(int[,] matriz)
