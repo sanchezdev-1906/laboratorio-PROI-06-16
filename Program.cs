@@ -95,10 +95,9 @@ class Program
         Console.Write("Tamaño de la matriz: ");
         int N = int.Parse(Console.ReadLine());
         int[,] MatTri = new int[N, N];
-        int x = 0;
         for (int f = 0; f < N; f++)
         {
-            for (int c = 0; c <= x; c++)
+            for (int c = 0; c < N; c++)
             {
                 MatTri[f, c] = c > f ? 0 : 1;
             }
@@ -141,7 +140,7 @@ class Program
         for (int i = 0; i <= matriz.GetUpperBound(0); i++)
         {
             Console.Write("\n");
-            for (int j = 0; j < matriz.GetUpperBound(1); j++)
+            for (int j = 0; j <= matriz.GetUpperBound(1); j++)
             {
                 Console.Write($"{matriz[i, j]} ");
             }
